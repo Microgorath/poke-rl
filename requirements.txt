@@ -1,7 +1,7 @@
-tensorflow==2.13
 ray[rllib]
 poke-env
 ipython
 ipykernel
 ipywidgets
 tqdm
+tensorboard

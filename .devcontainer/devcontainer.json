@@ -5,8 +5,6 @@
 	"image": "tensorflow/tensorflow:2.13.0-gpu-jupyter",
 
 	"runArgs": ["--gpus=all"
-        // "-p=8000:8000"
-        // "--net=host"
     ],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -19,8 +17,10 @@
 
 	// Uncomment the next line to run commands after the container is created.
 	// "postCreateCommand": "bash .devcontainer/install-pokemon-showdown.sh",
-
-    "postStartCommand": "bash -i -c 'node pokemon-showdown/pokemon-showdown start --no-security'",
+    // Uncomment the next line to run commands each time the container is started, before postAttachCommand
+    // "postStartCommand": "",
+    // Running in interactive shell (-i) allows it to be used as soon as it is installed.
+    "postAttachCommand": "bash -i .devcontainer/start-pokemon-showdown.sh",
 
 	"remoteEnv": {
         "PATH": "${containerEnv:PATH}:/usr/local/cuda/bin",
@@ -41,6 +41,7 @@
                 "ms-toolsai.jupyter-keymap",
                 "ms-toolsai.jupyter-renderers",
                 "ms-toolsai.vscode-jupyter-slideshow",
+                "ms-toolsai.tensorboard",
                 "ms-python.vscode-pylance"
             ]
         }
