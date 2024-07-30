@@ -3,7 +3,7 @@
 ### Requirements Overview
 This notebook uses RLLib, an open-source scalable reinforcement learning library in the Ray framework.  
 RLLib currently supports Python 3.9 - 3.12.  
-RLLib supports both PyTorch and Tensorflow, so either may be used. Preferably, the library used will be CUDA-enabled to utilize the GPU, but it is optional. Nvidia GPU support only.  
+RLLib supports both PyTorch and Tensorflow, so either may be used. This setup will assume GPU will be used, but it is not necessary for most algorithms. Training with GPU was found to be slightly slower than only using CPU for DQN. GPU use is most likely only useful for large models that take longer for inference or backprop.  
 
 ### Tensorflow GPU Support
 A dev container is provided that will set up a Linux Tensorflow 2.15.0-gpu-jupyter Docker container with everything set up for Tensorflow GPU support, which also starts its own local pokemon showdown server when started. The showdown server is port forwarded to be visible on the host, at http://localhost:8000.  
